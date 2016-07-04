@@ -52,7 +52,7 @@ do
 
       # Start local GRAFANA server
       echo -e "\n${cyan}==> Starting grafana server${reset}"
-      docker run --name $GRAFANA_NAME --link $INFLUX_NAME:$INFLUX_NAME -d -p 80:8080 -e INFLUXDB_URL="http://$INFLUX_NAME:8086" -e DB_NAME=$INFLUX_DATABASE ekino/grafana:latest
+      docker run --name $GRAFANA_NAME --link $INFLUX_NAME:$INFLUX_NAME -d -p 80:3000 -e INFLUXDB_URL="http://$INFLUX_NAME:8086" -e DB_NAME=$INFLUX_DATABASE ekino/grafana:latest
       w=5 ; echo -e "\n${cyan}==> Waiting ${w}s for grafana container${reset}" ; sleep $w
       docker logs $(docker ps -lq)
 
