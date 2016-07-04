@@ -4,13 +4,13 @@ FROM ekino/base
 MAINTAINER Matthieu Fronton <fronton@ekino.com>
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV GRAFANA_VERSION 1.9.1
+ENV GRAFANA_VERSION 2.6.0
 
 # required tools
 RUN apt-get update && apt-get install -y python-twisted
 
 # install grafana
-RUN curl -sSL -o grafana.tar.gz http://grafanarel.s3.amazonaws.com/grafana-${GRAFANA_VERSION}.tar.gz
+RUN curl -sSL -o grafana.tar.gz http://grafanarel.s3.amazonaws.com/grafana-${GRAFANA_VERSION}.linux-x64.tar.gz
 RUN mkdir -p /opt
 RUN tar xzf grafana.tar.gz -C /opt
 RUN ln -sf /opt/grafana-${GRAFANA_VERSION} /opt/grafana
