@@ -10,7 +10,7 @@ ENV GRAFANA_VERSION 2.6.0
 RUN apt-get update && apt-get install -y python-twisted
 
 # install grafana
-RUN curl -sSL -o grafana.tar.gz http://grafanarel.s3.amazonaws.com/grafana-${GRAFANA_VERSION}.linux-x64.tar.gz
+RUN curl -sSL -o grafana.tar.gz http://grafanarel.s3.amazonaws.com/builds/grafana-${GRAFANA_VERSION}.linux-x64.tar.gz
 RUN mkdir -p /opt
 RUN tar xzf grafana.tar.gz -C /opt
 RUN ln -sf /opt/grafana-${GRAFANA_VERSION} /opt/grafana
