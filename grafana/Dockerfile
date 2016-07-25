@@ -4,7 +4,7 @@ FROM ekino/base
 MAINTAINER Matthieu Fronton <fronton@ekino.com>
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV GRAFANA_VERSION 2.6.0
+ENV GRAFANA_VERSION 3.1.0-1466666977beta1
 
 # required tools
 RUN apt-get update && apt-get install -y python-twisted
